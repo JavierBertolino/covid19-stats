@@ -32,11 +32,11 @@ export const getData = async (country) => {
 }
 
 export const getDailyData = async (country) => {
-    console.log('getting from', country)
+
     try {
-        const { data } = await axios.get(`${baseURL}/live/country/${country}`);
-        console.log('countrydata', data);
-        const parsedData = data.map((dailyData) => {
+        const response = await axios.get(`${baseURL}/live/country/${country}`);
+
+        const parsedData = response.data.map((dailyData) => {
             return {
                 confirmed: dailyData.Confirmed,
                 deaths: dailyData.Deaths,
@@ -48,7 +48,7 @@ export const getDailyData = async (country) => {
 
     } catch (e) {
         console.log('Failed to retrieve daily data', e);
-        throw e;
+        return [];
     }
 }
 
