@@ -30,7 +30,7 @@ function App() {
   return (
     <div className={styles.container}>
       <br />
-      <Typography variant="h4">
+      <Typography variant="h3">
         <b>Global and Country Wise Cases of Corona Virus (COVID-19)</b>
       </Typography>
       <Typography variant="body1">
